@@ -4,7 +4,8 @@
 #include <unistd.h>                          //sleep();
 #include <time.h>                            //time(NULL);
 
-void cls();
+#define Clear system("clear");
+
 void welcome();
 void morse1();
 void morse2();
