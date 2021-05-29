@@ -19,4 +19,4 @@ void morse1();
 void morse2();
 void help();
 
-struct Input * New(int * count);
+struct Input * New();

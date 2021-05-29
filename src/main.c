@@ -46,16 +46,14 @@ void welcome(){
 
 void morse1() {
 	Clear
-	int count = 0;
-	int i = 0;
 
-	struct Input * pHead = NULL;
 	struct Input * pTemp = NULL;
+	struct Input * pEnd = NULL;
 
 	printf("请输入：\n");
-	pTemp = pHead = New(&count);
+	pEnd = pTemp = New();
 	Clear
-	while(i < count) {
+	while(pTemp != NULL) {
 		switch (pTemp -> m) {
 			case 'a':
 			case 'A':
@@ -197,10 +195,12 @@ void morse1() {
 			default:
 				break;
 		}
+		pEnd = pTemp;
 		pTemp = pTemp -> pNext;
-		i++;
+		free(pEnd);
 	}
-	free(pHead);
+	pEnd = NULL;
+	pTemp = NULL;
 	printf("\n按Enter退出\n");
 	input();
 	return;
@@ -224,33 +224,62 @@ void help() {
 	return;
 }
 
-struct Input * New(int * count) {
+struct Input * New() {
 	struct Input * pHead = NULL;
 	struct Input * pNew,* pEnd;
+	struct Input * pTemp;
 
 	int exit = 1;
 
-	if(*count == 0) {
-		pEnd = pNew = pHead = (struct Input *)malloc(sizeof(struct Input));
-	}
+	pEnd = pNew = pHead = (struct Input *)malloc(sizeof(struct Input));
+	pHead -> pNext = NULL;
+	pHead -> m = 0x00;
+
 	do {
-		*count += 1;
-		if (*count == 1) {
-			pNew -> pNext = NULL;
-		}
-		else {
+		if (pEnd -> m != 0) {
 			pNew = (struct Input *)malloc(sizeof(struct Input));
 			pNew -> pNext = NULL;
-			pEnd -> pNext = pNew;
-			pEnd = pNew;
+			pEnd -> pNext = NULL;
 		}
 		pNew -> m = input();
 		printf("%c",pNew -> m);
 		if (pNew -> m == 0x1B) {
-			pEnd -> pNext = NULL;
 			free(pNew);
-			*count -= 1;
 			exit = 0;
+		}
+		else if (pNew -> m == 0x7F) {
+			free(pNew);
+			if (pEnd == pHead) {
+				if (pNew != pEnd) {
+					free(pHead);
+				}
+				pEnd = pNew = pHead = (struct Input *)malloc(sizeof(struct Input));
+				pHead -> pNext = NULL;
+				pHead -> m = 0x00;
+				printf("\n");
+				Clear
+				printf("请输入：\n");
+				continue;
+			}
+			free(pEnd);
+			printf("\n");
+			Clear
+			printf("请输入：\n");
+			pTemp = pHead;
+			while (pTemp -> pNext != NULL) {
+				printf("%c",pTemp -> m);
+				if (pTemp -> pNext == pEnd) {
+					pTemp -> pNext = NULL;
+					pEnd = pTemp;
+					break;
+				}
+				pTemp = pTemp -> pNext;
+			}
+			pNew = NULL;
+		}
+		else {
+			pEnd -> pNext = pNew;
+			pEnd = pNew;
 		}
 	}while (exit);
 	printf("\n");
