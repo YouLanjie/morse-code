@@ -1,4 +1,4 @@
-#include "headfile/head.h"
+#include "../include/head.h"
 
 int main() {
 	Clear
@@ -23,8 +23,9 @@ int main() {
 				help();
 				Clear
 				break;
+			case 0x1B:
 			case 0x30:
-				Clear
+				Clear2
 				return 0;
 				break;
 			default:
@@ -32,15 +33,14 @@ int main() {
 				break;
 		}
 	}
-	Clear
+	Clear2
 	return 0;
 }
 
 void welcome(){
 	Clear
-	menu("welcome");
 	printf("\033[8;11H\033[1;33m1.加密字符串\033[8;37H2.解密字符\033[9;11H3.程序帮助\033[9;37H0.退出游戏\033[0m");
-	Menu
+	menu("welcome", 1, 1);
 	return;
 }
 
@@ -215,7 +215,6 @@ void help() {
 
 	Clear
 	menu2("帮助");
-	Menu2
 	a = input();
 	if (a == 0x31) {
 		Clear
@@ -286,3 +285,4 @@ struct Input * New() {
 	Clear
 	return pHead;
 }
+
