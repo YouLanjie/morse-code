@@ -5,9 +5,9 @@ struct Input {
         struct Input * pNext;
 };
 
-void welcome();
-void morse1();
-void morse2();
+void encryption();
+void decryption();
 void help();
 
 struct Input * New();
+
