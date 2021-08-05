@@ -1,11 +1,10 @@
 #include "../include/head.h"
 
 void encryption() {
-	Clear
-
 	struct Input * pTemp = NULL;
 	struct Input * pEnd = NULL;
 
+	Clear
 	printf("请输入：\n");
 	pEnd = pTemp = New();
 	Clear

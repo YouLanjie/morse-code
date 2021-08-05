@@ -6,7 +6,7 @@ struct Input {
 };
 
 void encryption();
-void decryption();
+int decryption(short a,struct Input * pTemp);
 void help();
 
 struct Input * New();

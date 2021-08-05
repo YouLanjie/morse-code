@@ -17,7 +17,7 @@ int main() {
 				encryption();
 				break;
 			case 0x32:
-				decryption();
+				decryption(0,NULL);
 				break;
 			case 0x33:
 				help();
