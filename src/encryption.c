@@ -12,137 +12,137 @@ void encryption() {
 		switch (pTemp -> m) {
 			case 'a':
 			case 'A':
-				printf(".-/");
+				printf("%s/",MorseCode[A]);
 				break;
 			case 'b':
 			case 'B':
-				printf("-.../");
+				printf("%s/",MorseCode[B]);
 				break;
 			case 'c':
 			case 'C':
-				printf("-.-./");
+				printf("%s/",MorseCode[C]);
 				break;
 			case 'd':
 			case 'D':
-				printf("-../");
+				printf("%s/",MorseCode[D]);
 				break;
 			case 'e':
 			case 'E':
-				printf("./");
+				printf("%s/",MorseCode[E]);
 				break;
 			case 'f':
 			case 'F':
-				printf("..-./");
+				printf("%s/",MorseCode[F]);
 				break;
 			case 'g':
 			case 'G':
-				printf("--./");
+				printf("%s/",MorseCode[G]);
 				break;
 			case 'h':
 			case 'H':
-				printf("..../");
+				printf("%s/",MorseCode[H]);
 				break;
 			case 'i':
 			case 'I':
-				printf("../");
+				printf("%s/",MorseCode[I]);
 				break;
 			case 'j':
 			case 'J':
-				printf(".---/");
+				printf("%s/",MorseCode[J]);
 				break;
 			case 'k':
 			case 'K':
-				printf("-.-/");
+				printf("%s/",MorseCode[K]);
 				break;
 			case 'l':
 			case 'L':
-				printf(".-../");
+				printf("%s/",MorseCode[L]);
 				break;
 			case 'm':
 			case 'M':
-				printf("--/");
+				printf("%s/",MorseCode[M]);
 				break;
 			case 'n':
 			case 'N':
-				printf("-./");
+				printf("%s/",MorseCode[N]);
 				break;
 			case 'o':
 			case 'O':
-				printf("---/");
+				printf("%s/",MorseCode[O]);
 				break;
 			case 'p':
 			case 'P':
-				printf(".--./");
+				printf("%s/",MorseCode[P]);
 				break;
 			case 'q':
 			case 'Q':
-				printf("--.-/");
+				printf("%s/",MorseCode[Q]);
 				break;
 			case 'r':
 			case 'R':
-				printf(".-./");
+				printf("%s/",MorseCode[R]);
 				break;
 			case 's':
 			case 'S':
-				printf(".../");
+				printf("%s/",MorseCode[S]);
 				break;
 			case 't':
 			case 'T':
-				printf("-/");
+				printf("%s/",MorseCode[T]);
 				break;
 			case 'u':
 			case 'U':
-				printf("..-/");
+				printf("%s/",MorseCode[U]);
 				break;
 			case 'v':
 			case 'V':
-				printf("...-/");
+				printf("%s/",MorseCode[V]);
 				break;
 			case 'w':
 			case 'W':
-				printf(".--/");
+				printf("%s/",MorseCode[W]);
 				break;
 			case 'x':
 			case 'X':
-				printf("-..-/");
+				printf("%s/",MorseCode[X]);
 				break;
 			case 'y':
 			case 'Y':
-				printf("-.--/");
+				printf("%s/",MorseCode[Y]);
 				break;
 			case 'z':
 			case 'Z':
-				printf("--../");
+				printf("%s/",MorseCode[Z]);
 				break;
 			case '0':
-				printf("-----/");
+				printf("%s/",MorseCode[26]);
 				break;
 			case '1':
-				printf(".----/");
+				printf("%s/",MorseCode[27]);
 				break;
 			case '2':
-				printf("..---/");
+				printf("%s/",MorseCode[28]);
 				break;
 			case '3':
-				printf("...--/");
+				printf("%s/",MorseCode[29]);
 				break;
 			case '4':
-				printf("....-/");
+				printf("%s/",MorseCode[30]);
 				break;
 			case '5':
-				printf("...../");
+				printf("%s/",MorseCode[31]);
 				break;
 			case '6':
-				printf("-..../");
+				printf("%s/",MorseCode[32]);
 				break;
 			case '7':
-				printf("--.../");
+				printf("%s/",MorseCode[33]);
 				break;
 			case '8':
-				printf("---../");
+				printf("%s/",MorseCode[34]);
 				break;
 			case '9':
-				printf("----./");	
+				printf("%s/",MorseCode[35]);
 				break;
 			case '\n':
 				printf("\n");
