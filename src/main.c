@@ -10,8 +10,8 @@ int main() {
 	while(a!=0) {
 		Clear
 		printf("\033[8;11H\033[1;33m1.加密字符串\033[8;37H2.解密字符\033[9;11H3.程序帮助\033[9;37H0.退出游戏\033[0m");
-		menu("welcome", 1, 1);
-		a = input();
+		Menu("welcome", 1, 1);
+		a = Input();
 		Clear
 		switch(a) {
 			case 0x31:

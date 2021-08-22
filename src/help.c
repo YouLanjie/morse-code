@@ -4,11 +4,11 @@ void help() {
 	int a;
 
 	Clear
-	menu2("帮助");
-	a = input();
+	Menu2("帮助");
+	a = Input();
 	if (a == 0x31) {
 		Clear
-		input();
+		Input();
 	}
 	return;
 }

@@ -1,8 +1,8 @@
 #include "../include/head.h"
 
 void encryption() {
-	struct Input * pTemp = NULL;
-	struct Input * pEnd = NULL;
+	struct InputStruct * pTemp = NULL;
+	struct InputStruct * pEnd = NULL;
 
 	Clear
 	printf("请输入：\n");
@@ -157,7 +157,7 @@ void encryption() {
 	pEnd = NULL;
 	pTemp = NULL;
 	printf("\n按Enter退出\n");
-	input();
+	Input();
 	return;
 }
 

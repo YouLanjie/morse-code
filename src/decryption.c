@@ -1,9 +1,9 @@
 #include "../include/head.h"
 
 void decryption() {
-	struct Input * pHead = NULL;
-	struct Input * pEnd = NULL;
-	struct Input * pTemp = NULL;
+	struct InputStruct * pHead = NULL;
+	struct InputStruct * pEnd = NULL;
+	struct InputStruct * pTemp = NULL;
 	char m[10];
 
 	Clear2
@@ -42,7 +42,7 @@ void decryption() {
 				if (pEnd -> m == '\n') {
 					printf("\n");
 				}
-				kbhit2();
+				KbhitNoTime();
 			}
 		}
 		if (pTemp == NULL) {
@@ -58,6 +58,6 @@ void decryption() {
 	pEnd = NULL;
 	pTemp = NULL;
 	printf("\n按Enter退出\n");
-	input();
+	Input();
 	return;
 }
