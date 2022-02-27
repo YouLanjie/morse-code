@@ -42,7 +42,7 @@ void decryption() {
 				if (pEnd -> m == '\n') {
 					printf("\n");
 				}
-				KbhitNoTime();
+				kbhitGetchar();
 			}
 		}
 		if (pTemp == NULL) {
@@ -58,6 +58,6 @@ void decryption() {
 	pEnd = NULL;
 	pTemp = NULL;
 	printf("\n按Enter退出\n");
-	Input();
+	getch();
 	return;
 }

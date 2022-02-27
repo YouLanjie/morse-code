@@ -5,10 +5,10 @@ void help() {
 
 	Clear
 	Menu2("帮助");
-	a = Input();
+	a = getch();
 	if (a == 0x31) {
 		Clear
-		Input();
+		getch();
 	}
 	return;
 }

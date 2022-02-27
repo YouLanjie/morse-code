@@ -157,7 +157,7 @@ void encryption() {
 	pEnd = NULL;
 	pTemp = NULL;
 	printf("\n按Enter退出\n");
-	Input();
+	getch();
 	return;
 }
 

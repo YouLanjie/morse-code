@@ -15,7 +15,7 @@ int main() {
 		startSize = size.ws_col / 2 - 20;
 		printf("\033[8;%dH\033[1;33m1.加密字符串\033[8;%dH2.解密字符\033[9;%dH3.程序帮助\033[9;%dH0.退出游戏\033[0m", startSize, startSize + 32, startSize, startSize + 32);
 		Menu("welcome", 1, 1);
-		a = Input();
+		a = getch();
 		Clear
 		switch(a) {
 			case 0x31:
