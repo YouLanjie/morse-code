@@ -4,7 +4,7 @@ void help() {
 	int a;
 
 	Clear
-	Menu2("帮助");
+	Menu3("帮助");
 	a = getch();
 	if (a == 0x31) {
 		Clear
