@@ -41,18 +41,16 @@ char MorseCode[36][10] = {
 
 int main() {
 	int input = 1;
-	char *text[] = {
-		"1.加密字符串",
-		"2.解密字符",
-		"3.程序帮助",
-		"0.退出游戏",
-	};
+	menuData data = menuDataInit();
+
+	data.title = "welcome";
+	data.addText(&data, "1.加密字符串", "2.解密字符", "3.程序帮助", "0.退出游戏", NULL);
 
 	printf("\033[?25l\n");
 	Clear2
 	while(input != '0') {
 		Clear
-		input = Menu("welcome", text, 4, 2);
+		input = data.menuShow(&data);
 		Clear
 		switch(input) {
 			case '1':
