@@ -1,5 +1,4 @@
 #include "../include/head.h"
-#include <curses.h>
 
 char MorseCode[36][10] = {
 	".-",     //a
