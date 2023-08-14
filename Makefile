@@ -10,11 +10,8 @@ prom = morse-code
 all: morse-code
 
 $(prom): $(OBJ)
-	@rm -rf $(BIN)
-	$(CC) $(OBJ) -L lib -ltools -o $(prom)
-	@mkdir bin
-	@mv $(prom) $(BIN)/main
-	@rm -rf $(OBJ)
+	@if [ ! -d "$(BIN)" ]; then mkdir $(BIN); fi
+	$(CC) $(OBJ) -lncurses -o $(BIN)/main
 
 %.o: %.c $(incl)
 	$(CC) -g -Wall -c $< -o $@

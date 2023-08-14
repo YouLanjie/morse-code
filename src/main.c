@@ -1,4 +1,5 @@
 #include "../include/head.h"
+#include <curses.h>
 
 char MorseCode[36][10] = {
 	".-",     //a
@@ -39,43 +40,41 @@ char MorseCode[36][10] = {
 	"----."   //9
 };
 
+const extern ctools_menu CT_MENU;
+
 int main() {
 	int input = 1;
-	menuData data = menuDataInit();
+	const ctools_menu *p = &CT_MENU;
+	struct ctools_menu_t *data = NULL;
 
-	data.title = "welcome";
-	data.addText(&data, "1.加密字符串", "2.解密字符", "3.程序帮助", "0.退出游戏", NULL);
+	p->ncurses_init();
+	p->data_init(&data);
+	p->set_title(data, "welcome");
+	p->set_text(data, "1.加密字符串", "2.解密字符", "3.程序帮助", "0.退出游戏", NULL);
 
-	printf("\033[?25l\n");
-	Clear2
-	while(input != '0') {
-		Clear
-		input = data.menuShow(&data);
-		Clear
+	while(input != 'q') {
+		input = p->show(data);
 		switch(input) {
-			case '1':
+			case 1:
 				encryption();
 				break;
-			case '2':
+			case 2:
 				decryption();
 				break;
-			case '3':
+			case 3:
 				help();
 				break;
 			case 0x1B:
-			case '0':
-			case '4':
-				printf("\033[?25h\n");
-				Clear2
+			case 0:
+			case 4:
+				endwin();
 				return 0;
 				break;
 			default:
-				Clear
 				break;
 		}
 	}
-	printf("\033[?25h\n");
-	Clear2
+	endwin();
 	return 0;
 }
 
